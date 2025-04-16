@@ -9,7 +9,7 @@ import org.springframework.kafka.config.TopicBuilder;
 @Configuration
 public class KafkaTopicConfig {
 
-    @Value("$(app.kafka.topic)")
+    @Value("${app.kafka.topic}")
     private String topicName;
 
     @Bean
@@ -17,7 +17,7 @@ public class KafkaTopicConfig {
 
         return TopicBuilder.name(topicName)
                 .partitions(3)
-                .replicas(3)
+                .replicas(1)
                 .build();
     }
 
@@ -28,7 +28,7 @@ public class KafkaTopicConfig {
 
         return TopicBuilder.name(topicName+"_DLQ")
                 .partitions(3)
-                .replicas(3)
+                .replicas(1)
                 .build();
     }
 }
