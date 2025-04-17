@@ -2,6 +2,17 @@ spring:
   application:
     name: Notification Service
 
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: shubhmehro@gmail.com
+    password: kzkz nspf caot wped
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.starttls.enable: true
+      mail.smtp.ssl.trust: smtp.gmail.com
+      mail.smtp.ssl.enable: true
+
   datasource:
     url: jdbc:mysql://localhost:3306/Notification?createDatabaseIfNotExist=true
     username: root
@@ -16,5 +27,16 @@ spring:
       hibernate:
         format_sql: true
 
+  kafka:
+    consumer:
+      group-id: notification-service
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    bootstrap-servers: localhost:9092
+
 server:
-  port: 8091
+  port: 8093
+
+app:
+  kafka:
+    topic: user.signup
