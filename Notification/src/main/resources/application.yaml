@@ -2,6 +2,17 @@ spring:
   application:
     name: Notification Service
 
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: user@gmail.com  #Add your email here
+    password: "!@#$%^& " #Add your password here ,go to account setting search for app password ,create a new password and use it here
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.starttls.enable: true
+      mail.smtp.starttls.required: true
+      mail.smtp.ssl.trust: smtp.gmail.com
+
   datasource:
     url: jdbc:mysql://localhost:3306/Notification?createDatabaseIfNotExist=true
     username: root
@@ -16,5 +27,16 @@ spring:
       hibernate:
         format_sql: true
 
+  kafka:
+    consumer:
+      group-id: notification-service
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    bootstrap-servers: localhost:9092
+
 server:
-  port: 8091
+  port: 8093
+
+app:
+  kafka:
+    topic: user.signup

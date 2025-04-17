@@ -1,4 +1,4 @@
 package com.shubh.user.dto;
 
-public record UserRequest(String fullName, String email, String password) {
+public record UserRequest(String userName, String email, String password) {
 }
