@@ -5,8 +5,8 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username: shubhmehro@gmail.com
-    password: "kzkz nspf caot wped"
+    username: user@gmail.com  #Add your email here
+    password: "!@#$%^& " #Add your password here ,go to account setting search for app password ,create a new password and use it here
     properties:
       mail.smtp.auth: true
       mail.smtp.starttls.enable: true
