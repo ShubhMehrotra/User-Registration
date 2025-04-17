@@ -12,7 +12,8 @@ public class KafkaConsumer {
     @Autowired
     private NotificationServiceImpl service;
 
-    @KafkaListener(topics = "${app.kafka.topic}", groupId = "${spring.kafka.consumer.group-id}")
+    @KafkaListener(topics = "${app.kafka.topic}", groupId = "${spring.kafka.consumer.group-id}",
+            containerFactory = "userCreatedEventListener")
     public void consumeUserCreatedEvent(UserCreatedEvent event) {
         String to = event.email();
         String subject = "Welcome to our service!";
