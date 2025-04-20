@@ -10,6 +10,7 @@
 	</parent>
 	<groupId>com.shubh.notification</groupId>
 	<artifactId>Notification</artifactId>
+	<packaging>jar</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Notification Service</name>
 	<description>Notification service project for User Registration with Asynchronous Email Notification</description>

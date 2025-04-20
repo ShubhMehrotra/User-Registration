@@ -11,6 +11,7 @@
 	<groupId>com.shubh.user</groupId>
 	<artifactId>User</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 	<name>User Service</name>
 	<description>User service project for User Registration with Asynchronous Email Notification</description>
 	<url/>
